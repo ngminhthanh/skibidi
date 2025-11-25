@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tsukuyomi — Giỏ hàng</title>
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <div class="brand"><span class="logo"><a href="homepage.html"><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXclG6vGeVLNuHB_K1YrMlL0h-9l-xpt5iuvETEmFEeIyIviDKQFqw3xOEhyIuqBQED9fc9uondVMHhz3qkMKnFI_UjF2L3SczX-isHgde_GdkuVilvmIpkoi13mQEDhnC6t6Npipg?key=G2E7dZCc18RHDI4Eo7786g" alt="logo"></a></span><a href="homepage.html"><span>Tsukuyomi</span></a>
+        <nav class="main-nav">
+          <a href="homepage.html">Trang Chủ</a>
+          <a href="products.html">Sản phẩm</a>
+          <a href="introduct.html">Giới thiệu</a>
+          <a href="aboutus.html">Thành viên</a>
+          <a href="support.html">Hỗ trợ</a>
+        </nav>
+      </div>
+      <div class="nav-actions">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">👍</a>
+        <a href="cart.html" class="active">🛒</a></div>
+      </div>
+    </div>
+    <div class="promo">Xem lại những đơn hàng của bạn</div>
+  </header>
+
+  <main style="margin-left: 20px;margin-right: 20px; margin-top: 120px;">
+    <h1 class="title">Giỏ hàng của bạn</h1>
+    <p class="subtitle">Các sản phẩm bạn đã chọn:</p>
+
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Sản phẩm</th>
+          <th>Số lượng</th>
+          <th>Giá</th>
+          <th>Tổng</th>
+          <th>Trả góp (12 tháng)</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="cart-body"></tbody>
+    </table>
+
+    <div class="summary">
+      <strong id="total-items">Tổng số lượng: 0</strong><br>
+      <strong id="total-price">Tổng cộng: 0₫</strong><br>
+      <strong id="monthly-price">Trả góp mỗi tháng (12 tháng): 0₫/tháng</strong>
+    </div>
+
+    <div class="summary">
+      <button id="purcharse">Thanh toán giỏ hàng</button>
+      <button id="clear-cart">Xóa toàn bộ giỏ hàng</button>
+    </div>
+
+    <div id="bill-popup">
+      <div id="bill-container">
+        <h2>Hóa đơn thanh toán</h2>
+        <div id="bill-content"></div>
+        <div style="text-align:center;">
+          <button id="close-bill">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function formatCurrency(num) {
+      return num.toLocaleString('vi-VN') + '₫';
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem('globalCart', JSON.stringify(cart));
+    }
+
+    function deleteItem(index) {
+      let cart = JSON.parse(localStorage.getItem('globalCart')) || [];
+      cart.splice(index, 1);
+      saveCart(cart);
+      loadCart();
+    }
+
+    function loadCart() {
+      const cartBody = document.getElementById('cart-body');
+      const totalItems = document.getElementById('total-items');
+      const totalPrice = document.getElementById('total-price');
+      const monthlyPrice = document.getElementById('monthly-price');
+
+      const cart = JSON.parse(localStorage.getItem('globalCart')) || [];
+
+      if (cart.length === 0) {
+        cartBody.innerHTML = '<tr><td colspan="6" style="text-align:center;">Giỏ hàng trống.</td></tr>';
+        totalItems.textContent = 'Tổng số lượng: 0';
+        totalPrice.textContent = 'Tổng cộng: 0₫';
+        monthlyPrice.textContent = 'Trả góp mỗi tháng (12 tháng): 0₫/tháng';
+        return;
+      }
+
+      let totalQty = 0;
+      let total = 0;
+      let monthlyTotal = 0;
+      cartBody.innerHTML = '';
+
+      cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        const monthly = item.monthly * item.quantity;
+        totalQty += item.quantity;
+        total += subtotal;
+        monthlyTotal += monthly;
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.name}</td>
+          <td>${item.quantity}</td>
+          <td>${formatCurrency(item.price)}</td>
+          <td>${formatCurrency(subtotal)}</td>
+          <td>${formatCurrency(monthly)}</td>
+          <td><button class="delete-btn" data-index="${index}">Xóa</button></td>
+        `;
+        cartBody.appendChild(row);
+      });
+
+      totalItems.textContent = 'Tổng số lượng: ' + totalQty;
+      totalPrice.textContent = 'Tổng cộng: ' + formatCurrency(total);
+      monthlyPrice.textContent = 'Trả góp mỗi tháng (1 tháng): ' + formatCurrency(monthlyTotal) + '/tháng';
+
+      document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', () => deleteItem(btn.getAttribute('data-index')));
+      });
+    }
+
+    document.getElementById('clear-cart').addEventListener('click', () => {
+      localStorage.removeItem('globalCart');
+      loadCart();
+      alert('Giỏ hàng đã được xóa');
+    });
+    // document.getElementById('purcharse').addEventListener('click', () => {
+    //   localStorage.removeItem('globalCart');
+    //   loadCart();
+    //   alert('Đã thanh toán giỏ hàng!');
+    // });
+
+    
+
+    document.getElementById('purcharse').addEventListener('click', () => {
+      const cart = JSON.parse(localStorage.getItem('globalCart')) || [];
+      const popup = document.getElementById('bill-popup');
+      const billContent = document.getElementById('bill-content');
+
+      if (cart.length === 0) {
+        alert('Giỏ hàng trống...');
+        return;
+      }
+
+      let total = 0;
+      let monthly = 0;
+      let html = `
+        <table class="bill-table" >
+          <tr class="bill-table-row">
+            <th style="text-align:left;">Sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+            <th>Tổng</th>
+          </tr>
+      `;
+
+      cart.forEach(item => {
+        const sub = item.price * item.quantity;
+        const month = item.monthly * item.quantity;
+        total += sub;
+        monthly += month;
+        html += `
+          <tr>
+            <td>${item.name}</td>
+            <td style="text-align:center;">${item.quantity}</td>
+            <td style="text-align:right;">${formatCurrency(item.price)}</td>
+            <td style="text-align:right;">${formatCurrency(sub)}</td>
+          </tr>`;
+      });
+
+      html += `
+        </table>
+        <hr class="line">
+        <p><strong>Tổng cộng:</strong> ${formatCurrency(total)}</p>
+        <p><strong>Trả góp mỗi tháng (12 tháng):</strong> ${formatCurrency(monthly)}/tháng</p>
+        <p style="text-align:center;margin-top:20px;">Cảm ơn bạn đã mua hàng tại <b>Tsukuyomi</b>!</p>
+      `;
+
+      billContent.innerHTML = html;
+      popup.style.display = 'flex';
+      localStorage.removeItem('globalCart');
+      loadCart();
+    });
+
+    document.getElementById('close-bill').addEventListener('click', () => {
+      document.getElementById('bill-popup').style.display = 'none';
+    });
+    
+
+    window.addEventListener('DOMContentLoaded', loadCart);
+  </script>
+</body>
+</html>

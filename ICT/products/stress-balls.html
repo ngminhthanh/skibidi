@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mua bóng Squeeze giảm căng thẳng</title>
+  <link rel="stylesheet" href="../project.css">
+  <style>
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 70px;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-inner">
+    <div class="brand"><span class="logo"><a href="../homepage.html"><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXclG6vGeVLNuHB_K1YrMlL0h-9l-xpt5iuvETEmFEeIyIviDKQFqw3xOEhyIuqBQED9fc9uondVMHhz3qkMKnFI_UjF2L3SczX-isHgde_GdkuVilvmIpkoi13mQEDhnC6t6Npipg?key=G2E7dZCc18RHDI4Eo7786g" alt="logo"></a></span><a href="../homepage.html"><span>Tsukuyomi</span></a>
+      <nav class="main-nav">
+        <a href="../homepage.html">Trang Chủ</a>
+        <a href="../products.html">Sản phẩm</a>
+        <a href="../introduct.html">Giới thiệu</a>
+        <a href="../aboutus.html">Thành viên</a>
+        <a href="../support.html">Hỗ trợ</a>
+      </nav>
+    </div>
+    <div class="nav-actions">
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">👍</a>
+      <a href="../cart.html">🛒</a>
+    </div>
+  </div>
+  <div class="promo">Miễn phí vận chuyển cho đơn hàng trên 1.000.000₫</div>
+
+  <div class="container">
+    <p style="color:#ff8800;">Mới</p>
+    <h1>Bóng Squeeze giảm căng thẳng</h1>
+
+    <p class="price-items">
+      Từ <strong id="total-price" class="highlight">499.000 đ</strong> hoặc 
+      <strong id="monthly-price" class="highlight">42.415 đ/tháng</strong> trong 12 tháng.
+    </p>
+    
+    <button class="cta">Mua ngay</button>
+    <div class="quantity-selector">
+      <button class="quantity-btn" id="minus-btn">−</button>
+      <input type="number" id="quantity" class="quantity-input" value="1" min="1">
+      <button class="quantity-btn" id="plus-btn">+</button>
+    </div>
+
+
+    <div class="toys">
+      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Stress-balls-no1">
+      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Stress-balls-no2">
+      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Stress-balls-no3">
+      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Stress-balls-no4">
+    </div>
+    <h3 class="heading">Sự thật thú zị mà có thể bạn chưa biết </h3>
+    <p class="intro-content">
+      Những quả bóng giảm căng thẳng mặt cười màu neon này có thiết kế mặt cười sẽ ngay lập tức làm sáng lên tâm trạng của bạn; bao gồm 12 quả bóng xốp, mỗi quả có kích thước 2,5 inch; lý tưởng cho cả trẻ em và người lớn.
+      Việc bóp những quả bóng giảm căng thẳng này giúp giảm stress bằng cách chuyển hướng năng lượng; hoàn hảo để bóp trong lúc làm việc, chơi đùa, hoặc khi cảm thấy lo lắng, căng thẳng.
+      Những quả bóng giảm căng thẳng cho trẻ em và người lớn giúp thúc đẩy sự thư giãn và tập trung; công cụ lý tưởng để quản lý căng thẳng hàng ngày, thích hợp sử dụng tại nhà, trường học hoặc văn phòng.
+      Với kích thước nhỏ gọn, dễ mang theo trong túi hoặc để trên bàn làm việc, quả bóng giảm căng thẳng này cung cấp một phương pháp trị liệu hiệu quả cho việc nghịch tay; việc bóp quả bóng giúp giải phóng năng lượng, hỗ trợ tập trung và làm dịu thần kinh.
+      Những quả bóng xốp này là món quà lý tưởng cho các buổi tiệc, công cụ trị liệu hoặc phụ kiện trên bàn làm việc; với mặt cười tươi sáng, chúng là món quà hoàn hảo để làm sáng ngày của bất kỳ ai. 
+    </p>
+  </div>
+
+  <script>
+    const minusBtn = document.getElementById('minus-btn');
+    const plusBtn = document.getElementById('plus-btn');
+    const quantityInput = document.getElementById('quantity');
+    const totalPrice = document.getElementById('total-price');
+    const monthlyPrice = document.getElementById('monthly-price');
+
+    const basePrice = 499000;
+    const baseMonthly = 42415; 
+
+    function updatePrice() {
+      const qty = parseInt(quantityInput.value);
+      const total = basePrice * qty;
+      const monthly = baseMonthly * qty;
+      totalPrice.textContent = total.toLocaleString('vi-VN') + ' đ';
+      monthlyPrice.textContent = monthly.toLocaleString('vi-VN') + ' đ/tháng';
+    }
+
+    plusBtn.addEventListener('click', () => {
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+      updatePrice();
+    });
+
+    minusBtn.addEventListener('click', () => {
+      const newValue = Math.max(1, parseInt(quantityInput.value) - 1);
+      quantityInput.value = newValue;
+      updatePrice();
+    });
+
+    quantityInput.addEventListener('input', updatePrice);
+
+
+    const buyBtn = document.querySelector('.cta');
+    buyBtn.addEventListener('click', () => {
+    const qty = parseInt(quantityInput.value);
+    const productName = document.querySelector('h1').textContent.replace('Mua ', '');
+    const price = basePrice;
+    const monthly = baseMonthly;
+
+    let cart = JSON.parse(localStorage.getItem('globalCart')) || [];
+
+    const existing = cart.find(item => item.name === productName);
+    if (existing) {
+        existing.quantity += qty;
+    } else {
+        cart.push({ name: productName, price, monthly, quantity: qty });
+    }
+
+    localStorage.setItem('globalCart', JSON.stringify(cart));
+    alert("Đã thêm " + qty + " sản phẩm vào giỏ hàng!");
+    });
+  </script>
+
+   <footer>
+    <p>Tsukuyomi. <span id="day"></span>/<span id="month"></span>/<span id="year"></span></p>
+    <script>document.getElementById("day").textContent=new Date().getUTCDate()</script>
+    <script>document.getElementById("month").textContent=new Date().getUTCMonth()+1</script>
+    <script>document.getElementById("year").textContent=new Date().getUTCFullYear()</script>
+    <p>Made by サトウ</p>
+  </footer>
+</body>
+</html>

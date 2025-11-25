@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tsukuyomi — Sản phẩm</title>
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <div class="brand"><span class="logo"><a href="homepage.html"><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXclG6vGeVLNuHB_K1YrMlL0h-9l-xpt5iuvETEmFEeIyIviDKQFqw3xOEhyIuqBQED9fc9uondVMHhz3qkMKnFI_UjF2L3SczX-isHgde_GdkuVilvmIpkoi13mQEDhnC6t6Npipg?key=G2E7dZCc18RHDI4Eo7786g" alt="logo"></a></span><a href="homepage.html"><span>Tsukuyomi</span></a>
+        <nav class="main-nav">
+          <a href="homepage.html">Trang Chủ</a>
+          <a href="products.html" class="active">Sản phẩm</a>
+          <a href="introduct.html">Giới thiệu</a>
+          <a href="aboutus.html">Thành viên</a>
+          <a href="support.html">Hỗ trợ</a>
+        </nav>
+      </div>
+      <div class="nav-actions">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">👍</a>
+        <a href="cart.html">🛒</a>
+      </div>
+    </div>
+    <div class="promo">Miễn phí vận chuyển cho đơn trên 1.000.000₫</div>
+  </header>
+
+  <main style="margin-top:120px; padding:60px 20px; max-width:1200px; margin-left:auto; margin-right:auto;">
+    <h1 class="title" style="text-align:center;">Sản phẩm</h1>
+    <p class="subtitle" style="text-align:center; margin-bottom:60px;">Khám phá những món đồ chơi tinh tế, an toàn và sáng tạo.</p>
+    
+    <div class="grid" >
+      <div class="card">
+        <a href="./products/stress-balls.html">
+          <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="stress-balls">
+          <h3>Bóng Squeeze giảm căng thẳng</h3>
+          <p class="muted"></p>
+          <div class="price">1.099.000₫</div>
+        </a>
+      </div>
+      <div class="card" >
+        <a href="./products/uno.html">
+          <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Uno">
+          <div >
+            <h3>Bộ bài UNO</h3>
+            <p class="muted"></p>
+            <div class="price">199.000₫</div>
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="./products/exploding-kittens.html">
+          <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Exploding-kittens">
+          <h3>Bộ bài Mèo Nổ</h3>
+          <p class="muted"></p>
+          <div class="price">199.000₫</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="./products/model-kit.html">
+          <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Model-kit">
+          <h3>Model kit Forest Adventure</h3>
+          <p class="muted"></p>
+          <div class="price">499.000₫</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="./products/astoflo-figure.html">
+          <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Figure">
+          <h3>Fate/Grand Order - Saber/Astolfo 1/7</h3>
+          <p class="muted"></p>
+          <div class="price">3.599.000₫</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="./products/lego.html">
+          <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Lego">
+          <h3>Set LEGO® The Goonies</h3>
+          <p class="muted"></p>
+          <div class="price">239.000₫</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="./products/Pillow.html">
+          <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Lego">
+          <h3 style="color: red;">Gối ôm Bảo Long - <i>Limited Edition</i></h3>
+          <p class="muted"></p>
+          <div class="price">239.000₫</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="./products/Chess.html">
+          <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Lego">
+          <h3>Bộ cờ vua Championship</h3>
+          <p class="muted"></p>
+          <div class="price">239.000₫</div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="./products/jigsaw.html">
+          <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Jigsaw">
+          <h3>Trò chơi xếp hình The Drippy Trip</h3>
+          <p class="muted"></p>
+          <div class="price">239.000₫</div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+   <footer>
+    <p>Tsukuyomi. <span id="day"></span>/<span id="month"></span>/<span id="year"></span></p>
+    <script>document.getElementById("day").textContent=new Date().getUTCDate()</script>
+    <script>document.getElementById("month").textContent=new Date().getUTCMonth()+1</script>
+    <script>document.getElementById("year").textContent=new Date().getUTCFullYear()</script>
+    <p>Made by サトウ</p>
+  </footer>
+</body>
+</html>

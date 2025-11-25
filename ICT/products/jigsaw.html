@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mua trò chơi xếp hình The Drippy Trip</title>
+  <link rel="stylesheet" href="../project.css">
+  <style>
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 70px;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-inner">
+    <div class="brand"><span class="logo"><a href="../homepage.html"><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXclG6vGeVLNuHB_K1YrMlL0h-9l-xpt5iuvETEmFEeIyIviDKQFqw3xOEhyIuqBQED9fc9uondVMHhz3qkMKnFI_UjF2L3SczX-isHgde_GdkuVilvmIpkoi13mQEDhnC6t6Npipg?key=G2E7dZCc18RHDI4Eo7786g" alt="logo"></a></span><a href="../homepage.html"><span>Tsukuyomi</span></a>
+      <nav class="main-nav">
+        <a href="../homepage.html">Trang Chủ</a>
+        <a href="../products.html">Sản phẩm</a>
+        <a href="../introduct.html">Giới thiệu</a>
+        <a href="../aboutus.html">Thành viên</a>
+        <a href="../support.html">Hỗ trợ</a>
+      </nav>
+    </div>
+    <div class="nav-actions">
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">👍</a>
+      <a href="../cart.html">🛒</a>
+    </div>
+  </div>
+  <div class="promo">Miễn phí vận chuyển cho đơn hàng trên 1.000.000₫</div>
+
+  <div class="container">
+    <p style="color:#ff8800;">Mới</p>
+    <h1>Trò chơi xếp hình The Drippy Trip</h1>
+
+    <p class="price-items">
+      Từ <strong id="total-price" class="highlight">239.000 đ</strong> hoặc 
+      <strong id="monthly-price" class="highlight">20.315 đ/tháng</strong> trong 12 tháng.
+    </p>
+    
+    <button class="cta">Mua ngay</button>
+    <div class="quantity-selector">
+      <button class="quantity-btn" id="minus-btn">−</button>
+      <input type="number" id="quantity" class="quantity-input" value="1" min="1">
+      <button class="quantity-btn" id="plus-btn">+</button>
+    </div>
+
+
+    <div class="toys">
+      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Jigsaw-no1">
+      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Jigsaw-no2">
+      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Jigsaw-no3">
+      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Jigsaw-no4">
+    </div>
+    <h3 class="heading">Sự thật thú zị mà có thể bạn chưa biết </h3>
+    <p class="intro-content">
+      The Drippy Trip là một bộ đồ chơi 1000 mảnh mới hoàn toàn, với một yếu tố ảo thuật độc đáo khi bạn hoàn thành. Sau khi bạn lắp ráp xong, bạn sẽ được trải nghiệm một trò ảo thuật kỳ diệu, sử dụng các ý tưởng về ảo giác hình ảnh và phép thuật để tạo nên kết thúc gây ngạc nhiên, chắc chắn sẽ là một trải nghiệm thú vị chưa từng có khi giải đố.
+      Bộ đồ chơi này mang đến một bức tranh nghệ thuật gốc tuyệt đẹp, với vô số chi tiết nhỏ tinh tế. Bên cạnh đó, bạn sẽ tìm thấy hơn 50 "easter eggs" – những chi tiết ẩn thú vị – trong suốt quá trình giải đố, tạo nên sự khám phá bất ngờ và thú vị.
+      Điều đặc biệt là bộ đồ chơi này không có bụi, không sử dụng nhựa một lần và không có hình ảnh stock hay nghệ thuật tạo ra bởi AI, đảm bảo chất lượng và sự sáng tạo thực sự trong từng mảnh ghép.
+      Bộ sản phẩm còn đi kèm với hai poster nghệ thuật để nhiều người có thể cùng nhau giải đố, tạo ra một trải nghiệm kết nối tuyệt vời giữa bạn và bạn bè, gia đình.
+    </p>
+  </div>
+
+  <script>
+    const minusBtn = document.getElementById('minus-btn');
+    const plusBtn = document.getElementById('plus-btn');
+    const quantityInput = document.getElementById('quantity');
+    const totalPrice = document.getElementById('total-price');
+    const monthlyPrice = document.getElementById('monthly-price');
+
+    const basePrice = 239000; 
+    const baseMonthly = 20315; 
+
+    function updatePrice() {
+      const qty = parseInt(quantityInput.value);
+      const total = basePrice * qty;
+      const monthly = baseMonthly * qty;
+      totalPrice.textContent = total.toLocaleString('vi-VN') + ' đ';
+      monthlyPrice.textContent = monthly.toLocaleString('vi-VN') + ' đ/tháng';
+    }
+
+    plusBtn.addEventListener('click', () => {
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+      updatePrice();
+    });
+
+    minusBtn.addEventListener('click', () => {
+      const newValue = Math.max(1, parseInt(quantityInput.value) - 1);
+      quantityInput.value = newValue;
+      updatePrice();
+    });
+
+    quantityInput.addEventListener('input', updatePrice);
+
+
+    const buyBtn = document.querySelector('.cta');
+    buyBtn.addEventListener('click', () => {
+    const qty = parseInt(quantityInput.value);
+    const productName = document.querySelector('h1').textContent.replace('Mua ', '');
+    const price = basePrice;
+    const monthly = baseMonthly;
+
+    let cart = JSON.parse(localStorage.getItem('globalCart')) || [];
+
+    const existing = cart.find(item => item.name === productName);
+    if (existing) {
+        existing.quantity += qty;
+    } else {
+        cart.push({ name: productName, price, monthly, quantity: qty });
+    }
+
+    localStorage.setItem('globalCart', JSON.stringify(cart));
+    alert("Đã thêm " + qty + " sản phẩm vào giỏ hàng!");
+    });
+  </script>
+
+   <footer>
+    <p>Tsukuyomi. <span id="day"></span>/<span id="month"></span>/<span id="year"></span></p>
+    <script>document.getElementById("day").textContent=new Date().getUTCDate()</script>
+    <script>document.getElementById("month").textContent=new Date().getUTCMonth()+1</script>
+    <script>document.getElementById("year").textContent=new Date().getUTCFullYear()</script>
+    <p>Made by サトウ</p>
+  </footer>
+</body>
+</html>
