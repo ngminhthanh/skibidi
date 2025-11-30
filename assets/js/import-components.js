@@ -17,7 +17,9 @@
     const components = componentsParam.split(',').map(item => item.trim());
 
     // Base URL for the assets (adjusted for your relative path)
-    const baseUrl = `${window.location.origin}/assets`;
+    const baseUrl = window.location.hostname.includes("github.io") 
+    ? `${window.location.origin}/ICT-project/assets`
+    : `${window.location.origin}/assets`;
 
     components.forEach(fileName => {
         const htmlPath = `${baseUrl}/html/${fileName}.html`;
