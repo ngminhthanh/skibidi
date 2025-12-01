@@ -1,0 +1,54 @@
+.customer-form {
+  max-width: 450px;
+  margin: 40px auto;
+  background: var(--lightermain-color);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  font-family: system-ui, sans-serif;
+}
+
+.customer-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.customer-form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.customer-form input,
+.customer-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--main-color);
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.customer-form input:focus,
+.customer-form textarea:focus {
+  border-color: #0071e3;
+  box-shadow: 0 0 4px rgba(0,113,227,0.4);
+}
+
+.customer-form button {
+  width: 100%;
+  padding: 14px;
+  background: #0071e3;
+  color: var(--main-color);
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.customer-form button:hover {
+  background: #005bb5;
+}

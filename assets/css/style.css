@@ -8,7 +8,7 @@
   --main-color: fuchsia;
   --darkermain-color: fuchsia;
   --lightermain-color: #fcddff;
-  --secondary-color:  #000000;
+  --secondary-color: #000000;
   --darkersecondary-color: #152636;
   --lightersecondary-color: #ffffff;
 }
@@ -34,7 +34,6 @@ a:hover {
 .section {
   background-color: var(--main-color);
 }
-
 
 .brand {
   display: flex;
@@ -64,6 +63,13 @@ a:hover {
   font-size: 20px;
   color: var(--darkersecondary-color);
   text-align: center;
+}
+.title-container {
+  margin-top: 10px;
+  padding: 60px 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .heading {
   margin-top: 20px;
@@ -117,7 +123,6 @@ a:hover {
   font-size: 16px;
   color: var(--secondary-color);
 }
-
 
 .slider {
   position: relative;
@@ -518,7 +523,7 @@ button:hover {
 
 .right {
   transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg); 
+  -webkit-transform: rotate(-45deg);
 }
 
 .left {
@@ -536,13 +541,13 @@ button:hover {
   -webkit-transform: rotate(45deg);
 }
 
-#countdown{
-  font-size: 24px; 
-  font-weight: bold; 
+#countdown {
+  font-size: 24px;
+  font-weight: bold;
   margin-top: 20px;
 }
 
-.logo{
+.logo {
   object-fit: cover;
   padding-bottom: 0px;
 }
