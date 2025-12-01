@@ -17,12 +17,37 @@
 
     <div id="purchase"></div>
 
-    <div class="toys">
-      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Model-kit-no1">
-      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Model-kit-no2">
-      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Model-kit-no3">
-      <img src="https://anchorridge.org/wp-content/uploads/2020/07/Toys.png" alt="Model-kit-no4">
-    </div>
+    <div class="product-gallery">
+        <img
+          id="mainImage"
+          class="big-image"
+          src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfwRQXSRycB3azpCml83aUjJ5o7lm2zPOsITX6X5D0posSvHOBuHJIDL6nANyVIUB_ZObOXN_uTtFw0IS4zbABV2dOIJZWb-cWXljyDX65el51MMsCXWJg7F0CLH_zpAVceacD0?key=uM4T9K2cZ_zv-lmxAN8BfA"
+          alt="Product"
+        />
+
+        <div class="thumb-row">
+          <img
+            src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfwRQXSRycB3azpCml83aUjJ5o7lm2zPOsITX6X5D0posSvHOBuHJIDL6nANyVIUB_ZObOXN_uTtFw0IS4zbABV2dOIJZWb-cWXljyDX65el51MMsCXWJg7F0CLH_zpAVceacD0?key=uM4T9K2cZ_zv-lmxAN8BfA"
+            class="thumb"
+            onclick="changeImage('https://lh7-rt.googleusercontent.com/docsz/AD_4nXfwRQXSRycB3azpCml83aUjJ5o7lm2zPOsITX6X5D0posSvHOBuHJIDL6nANyVIUB_ZObOXN_uTtFw0IS4zbABV2dOIJZWb-cWXljyDX65el51MMsCXWJg7F0CLH_zpAVceacD0?key=uM4T9K2cZ_zv-lmxAN8BfA')"
+          />
+          <img
+            src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdvJNTjFALtJ48GEYhntlVeyZNTEtDDTgLhegg-mK4GaYxaXXZ5IRfQO09NQ9mQAepgJ21Bln_-5athO6b0qy3A8SgQQKgTtQ_jTTVbnfUK6ilgUK5JtdR6odXXH3bbvhHFkAZA7Q?key=uM4T9K2cZ_zv-lmxAN8BfA"
+            class="thumb"
+            onclick="changeImage('https://lh7-rt.googleusercontent.com/docsz/AD_4nXdvJNTjFALtJ48GEYhntlVeyZNTEtDDTgLhegg-mK4GaYxaXXZ5IRfQO09NQ9mQAepgJ21Bln_-5athO6b0qy3A8SgQQKgTtQ_jTTVbnfUK6ilgUK5JtdR6odXXH3bbvhHFkAZA7Q?key=uM4T9K2cZ_zv-lmxAN8BfA')"
+          />
+          <img
+            src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdVlt-0K2-FPqa5bNgsKlppqkwBjFsFcbcqi8QBASwYZqbpzjvnbx-RU2WorNDxJIEoSZvkxt1bcodZ0zQrWlEy4KRoATB5bieflZLXy66sxmu304biwC6L3ehdbqowKCBeWekfjQ?key=uM4T9K2cZ_zv-lmxAN8BfA"
+            class="thumb"
+            onclick="changeImage('https://lh7-rt.googleusercontent.com/docsz/AD_4nXdVlt-0K2-FPqa5bNgsKlppqkwBjFsFcbcqi8QBASwYZqbpzjvnbx-RU2WorNDxJIEoSZvkxt1bcodZ0zQrWlEy4KRoATB5bieflZLXy66sxmu304biwC6L3ehdbqowKCBeWekfjQ?key=uM4T9K2cZ_zv-lmxAN8BfA')"
+          />
+          <img
+            src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeadlorLLI7qpAVs5M-clPOif82n7BjxgwdxwDYGG7yWfjrJJHq5GGRqnaXVj0sdaof3CtaWtaHaePxA8fy9pan-9wHCfsU88peqlEqL2syZ71pq9LbKCg2DlRkFPkFGqd60LS-xA?key=uM4T9K2cZ_zv-lmxAN8BfA"
+            class="thumb"
+            onclick="changeImage('https://lh7-rt.googleusercontent.com/docsz/AD_4nXeadlorLLI7qpAVs5M-clPOif82n7BjxgwdxwDYGG7yWfjrJJHq5GGRqnaXVj0sdaof3CtaWtaHaePxA8fy9pan-9wHCfsU88peqlEqL2syZ71pq9LbKCg2DlRkFPkFGqd60LS-xA?key=uM4T9K2cZ_zv-lmxAN8BfA')"
+          />
+        </div>
+      </div>
     <h3 class="heading">Sự thật thú zị mà có thể bạn chưa biết </h3>
     <p class="intro-content">
       - Bộ kit DIY nhà mô hình mini này là một sản phẩm tuyệt vời dành cho những ai yêu thích nghệ thuật thủ công và các
@@ -47,6 +72,7 @@
 
   <script src="../assets/js/import-components.js?components=navbar,footer,purchase"></script>
   <script src="../assets/js/calculate-price.js?basePrice=7999"></script>
+  <script src="../assets/js/img-onclick.js"></script>
 </body>
 
 </html>

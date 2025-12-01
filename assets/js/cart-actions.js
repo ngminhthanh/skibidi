@@ -1,5 +1,5 @@
 function formatCurrency(num) {
-    return num.toLocaleString('vi-VN') + '₫';
+    return num.toLocaleString('vi-VN') + '¥';
 }
 
 function saveCart(cart) {
@@ -24,8 +24,8 @@ function loadCart() {
     if (cart.length === 0) {
         cartBody.innerHTML = '<tr><td colspan="6" style="text-align:center;">Giỏ hàng trống.</td></tr>';
         totalItems.textContent = 'Tổng số lượng: 0';
-        totalPrice.textContent = 'Tổng cộng: 0₫';
-        monthlyPrice.textContent = 'Trả góp mỗi tháng (12 tháng): 0₫/tháng';
+        totalPrice.textContent = 'Tổng cộng: 0¥';
+        monthlyPrice.textContent = 'Trả góp mỗi tháng (12 tháng): 0¥/tháng';
         return;
     }
 
