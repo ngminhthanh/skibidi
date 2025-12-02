@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tsukuyomi — Giỏ hàng</title>
   <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/icon.js" async></script>
+  <script src="../assets/js/import-components.js?components=navbar" defer></script>
+  <script src="../assets/js/cart-actions.js" defer></script>
   <style>
-    /* Hoạt động là được 😎 */
     #cart {
       padding: 1%;
     }
@@ -15,9 +17,7 @@
 </head>
 
 <body>
-  <header id="navbar">
-    <script src="../assets/js/import-components.js?components=navbar"></script>
-  </header>
+  <header id="navbar"></header>
 
   <div id="cart">
     <table id="cart-table">
@@ -55,8 +55,6 @@
       </div>
     </div>
   </div>
-  <script src="../assets/js/cart-actions.js"></script>
-  <script src="../assets/js/icon.js"></script>
 </body>
 
 </html>

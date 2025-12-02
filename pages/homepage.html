@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tsukuyomi — Trang chủ</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  
+  <script src="../assets/js/icon.js" async></script>
+  <script src="../assets/js/import-components.js?components=navbar,footer" defer></script>
+  <script src="../assets/js/slide.js" defer></script>
 </head>
 
 <body>
@@ -145,23 +147,6 @@
   </section>
 
   <footer id="footer"></footer>
-
-  <script src="../assets/js/import-components.js?components=navbar,footer"></script>
-  <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
-
-    function showSlide(index) {
-      slides.forEach((slide) => slide.classList.remove("active"));
-      slideIndex = (index + slides.length) % slides.length;
-      slides[slideIndex].classList.add("active");
-    }
-
-    function moveSlide(step) {
-      showSlide(slideIndex + step);
-    }
-  </script>
-  <script src="../assets/js/icon.js"></script>
 </body>
 
 </html>
