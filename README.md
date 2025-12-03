@@ -1,7 +1,7 @@
 # Web bán đồ chơi 
 
 ## Giới thiệu
-Chào mừng bạn đến với [**Tsukoyomi**](https://satou-samaaiaf.github.io/ICT-project/ "Website")! 🎉
+Chào mừng bạn đến với [**Tsukuyomi**](https://satou-samaaiaf.github.io/ICT-project/ "Website")! 🎉
 
 Đây là một trang web thương mại điện tử chuyên cung cấp các loại đồ chơi phong phú, được thiết kế đặc biệt để "kích thích" sự vui nhộn và khơi dậy tiềm năng sáng tạo không giới hạn cho trẻ em lớn.
 
