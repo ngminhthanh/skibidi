@@ -4,7 +4,7 @@
   background: var(--lightermain-color);
   padding: 25px;
   border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
   font-family: system-ui, sans-serif;
 }
 
@@ -33,7 +33,7 @@
 .customer-form input:focus,
 .customer-form textarea:focus {
   border-color: #0071e3;
-  box-shadow: 0 0 4px rgba(0,113,227,0.4);
+  box-shadow: 0 0 4px rgba(0, 113, 227, 0.4);
 }
 
 .customer-form button {
