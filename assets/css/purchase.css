@@ -1,6 +1,6 @@
 #purchase .cta {
   background: #0071e3;
-  color: var(--secondary-color);
+  color: var(--darkersecondary-color);
   border: none;
   padding: 12px 30px;
   font-size: 1.1rem;
@@ -20,9 +20,9 @@
   gap: 15px;
 }
 #purchase .quantity-btn {
-  background: #b3b3b3;
+  background: var(--secondary-color);
   border: none;
-  color: var(--secondary-color);
+  color: var(--darkersecondary-color);
   font-size: 1.5rem;
   width: 40px;
   height: 40px;
@@ -33,15 +33,15 @@
   text-align: center;
 }
 #purchase .quantity-btn:hover {
-  background: #555;
+  background: var(--darkersecondary-color);
 }
 #purchase .quantity-input {
   width: 60px;
   text-align: center;
   font-size: 1.3rem;
-  color: var(--secondary-color);
+  color: var(--darkersecondary-colorr);
   background: var(--main-color);
-  border: 1px solid #555;
+  border: 1px solid var(--darkersecondary-color);
   border-radius: 10px;
   padding: 8px;
 }

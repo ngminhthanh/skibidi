@@ -11,12 +11,14 @@
 .customer-form h2 {
   text-align: center;
   margin-bottom: 20px;
+  color: var(--darkersecondary-color);
 }
 
 .customer-form label {
   font-weight: 600;
   margin-bottom: 5px;
   display: block;
+  color: var(--darkersecondary-color);
 }
 
 .customer-form input,

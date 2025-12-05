@@ -9,6 +9,9 @@
   <script src="../assets/js/import-components.js?components=navbar,footer" defer></script>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/form.css">
+  <link rel="stylesheet" href="../assets/css/toggle-button.css">
+  <link rel="stylesheet" href="../assets/css/change-color.css">
+  <script src="../assets/js/toggle-button.js"></script>
 </head>
 
 <body>
@@ -51,6 +54,11 @@
       Hết rồi, đi mua thêm đồ đi.
     </p>
   </main>
+  <div class="neon-toggle" onclick="toggleTheme()">
+    <div class="toggle-circle">
+      <span id="themeIcon">☀️</span>
+    </div>
+  </div>
 
   <footer id="footer"></footer>
 </body>

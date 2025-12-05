@@ -7,6 +7,9 @@
   <title>Mua bộ bài UNO</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/product.css">
+  <link rel="stylesheet" href="../assets/css/toggle-button.css">
+  <link rel="stylesheet" href="../assets/css/change-color.css">
+  <script src="../assets/js/toggle-button.js"></script>
   <script src="../assets/js/icon.js" async></script>
   <script src="../assets/js/import-components.js?components=navbar,footer,purchase" defer></script>
   <script src="../assets/js/calculate-price.js?basePrice=1249" defer></script>
@@ -53,6 +56,11 @@
       - Luật chơi cốt lõi: Nếu bạn không thể đánh, bạn phải rút thêm bài. Và quan trọng nhất: <em>Đừng bao giờ quên hét
         "UNO" khi bạn chỉ còn một lá bài</em>! Người chơi đầu tiên hết bài sẽ là người chiến thắng!
     </p>
+  </div>
+  <div class="neon-toggle" onclick="toggleTheme()">
+    <div class="toggle-circle">
+      <span id="themeIcon">☀️</span>
+    </div>
   </div>
 
   <footer id="footer"></footer>
